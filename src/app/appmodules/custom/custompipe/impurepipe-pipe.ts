@@ -8,10 +8,10 @@ export class ImpurepipePipe implements PipeTransform {
 
   transform(listdata:any[], param:any): any {
     if(!listdata) return []
-    if(!param) return listdata;
+    // if(!param) return listdata;
     return listdata.filter(xyz=>{
-      return xyz.name.includes(param)
-    }) 
+      return xyz.name.toUpperCase(param).includes(param)
+    })
   }
 
 }

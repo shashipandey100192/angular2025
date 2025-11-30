@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Landingpange } from './landingpange/landingpange';
 import { Mainpage } from './mainpage/mainpage';
 import { Errorpage } from '../sharescomponents/errorpage/errorpage';
+import { Myform } from './myform/myform';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path:"main",
     component:Mainpage
+  },
+  {
+    path:"form",
+    component:Myform
   },
   {
     path:"**",
