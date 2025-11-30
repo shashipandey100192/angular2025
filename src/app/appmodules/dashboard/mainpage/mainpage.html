@@ -4,3 +4,12 @@
 <h1>{{amount | mypipe}}</h1>
 
 <h1>{{amount | parampipe:8}}</h1>
+
+
+<input [{ngModel}]="searchdata" title="search"/>
+
+
+
+<ul *ngFor="let a of (counse | impurepipe:searchdata)">
+    <li> {{a.name}}</li>
+</ul>
