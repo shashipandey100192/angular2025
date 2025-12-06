@@ -2,4 +2,38 @@
     <input type="text" name="fname" formControlName="fname"><br>
     <input type="text" name="lname" formControlName="lname"><br>
     <input type="submit" value="submit">
+    <input type="button" value="change value" (click)="updatevalue()"> 
 </form>
+
+<h1>nested from group</h1>
+
+
+<form [formGroup]="mynestform">
+    <input type="text" formControlName="fname"><br>
+    <input type="text" formControlName="lname"><br>
+    <div formGroupName="address">
+        <input type="text" formControlName="city"><br>
+        <input type="text" formControlName="phone"><br>
+    </div>
+
+    <input type="button" value="submit" (click)="mygroupform()">
+    <input type="button" value="patchvalue" (click)="updatenete()">
+</form>
+
+
+<h1>form builder </h1>
+
+
+<form [formGroup]="mybulder">
+    <input type="text" formControlName="fname"><br>
+    <input type="text" formControlName="lname"><br>
+    
+    <input type="button" value="submit" (click)="printmyform()">
+    <input type="button" value="patchvalue">
+</form>
+
+<h1>event handling</h1>
+<input type="button" value="access control" (click)="xyz($event)">
+<input type="password" (input)="xyz($event)">
+<h3>{{y}}</h3>
+
