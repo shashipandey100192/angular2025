@@ -1,0 +1,41 @@
+<p>loopingpage works!</p>
+
+<ul>
+@for(a of students;track a.age; let myodd = $odd; let b =$index; let c = $count; let f = $first ; let l=$last)
+{
+    <li>{{a.name}} ------- {{myodd}}-------{{b}}--------{{c}}--------- {{f}}  -----------{{l}}</li>
+}
+</ul>
+<h1>particular condition</h1>
+
+<ul>
+@for(a of students;track a.age; let myodd = $odd; let i = $index)
+{
+    @if(myodd)
+    {
+        <li style="color:red">{{a.name}} {{i}}</li>
+    }
+   
+}
+</ul>
+
+<h1 style="color:orange;padding:10px">use of inline css</h1>
+
+
+<input type="text" [(ngModel)]="bg">
+<!-- <select [(ngModel)]="bg">
+    <option>red</option>
+    <option>green</option>
+    <option>orange</option>
+    <option>tomato</option>
+</select> -->
+<select (change)="xyz($event)">
+    <option>red</option>
+    <option>green</option>
+    <option>orange</option>
+    <option>tomato</option>
+</select>
+<h2 [ngStyle]="{'background-color':bg}">this is ngstyle</h2>
+
+
+
