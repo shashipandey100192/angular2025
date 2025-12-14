@@ -27,4 +27,14 @@ xyz(mycolor:any)
   this.bg = mycolor;
 }
 
+
+bg1:string="red";
+myinputcolor(mycolorelement:any)
+{
+  console.log(mycolorelement.target.value);
+  this.bg1 = mycolorelement.target.value;
+}
+
+
+
 }

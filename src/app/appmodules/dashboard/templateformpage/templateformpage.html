@@ -1,0 +1,56 @@
+<form #myform="ngForm" (ngSubmit)="mysubmit(myform)" novalidate>
+    <div class="container bg-warning p-3">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="firstname" [(ngModel)]="emp.fullname"
+                    name="fullname" #name="ngModel" required minlength="5" maxlength="10" pattern="[A-Z]{5}">
+                <!-- @if(name.invalid)
+            {
+                <p class="text-danger">first name is required</p>
+            }
+             -->
+
+                @if(name.invalid && (name.dirty || name.touched))
+                {
+                    @if(name.errors?.['minlength'])
+                    {
+                    <p class="text-danger">minlength is required </p>
+                    }
+
+                    @if(name.errors?.['required'])
+                    {
+                        <p class="text-danger">first name is required</p>
+                    }
+
+                    @if(name.errors?.['maxlength'])
+                    {
+                        <p class="text-danger">maxlength of full name  10</p>
+                    }
+                     @if(name.errors?.['pattern'])
+                    {
+                        <p class="text-danger">maxlength of full  pattern error</p>
+                    }
+
+
+
+                }
+
+
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="lastname" [(ngModel)]="emp.lastname"
+                    name="lastname" #last="ngModel" required>
+                @if(last.invalid)
+                {
+                <p class="text-danger">last name is required</p>
+                }
+            </div>
+            <div class="col-md-6">
+                <input type="button" class="btn btn-success mt-3" value="submit" (click)="myformsubmit()">
+                <input type="submit" class="btn btn-success mt-3" value="formsubmit">
+
+            </div>
+
+        </div>
+    </div>
+</form>

@@ -5,6 +5,7 @@ import { Mainpage } from './mainpage/mainpage';
 import { Errorpage } from '../sharescomponents/errorpage/errorpage';
 import { Myform } from './myform/myform';
 import { Loopingpage } from './loopingpage/loopingpage';
+import { Templateformpage } from './templateformpage/templateformpage';
 
 const routes: Routes = [
   {
@@ -17,11 +18,18 @@ const routes: Routes = [
   },
   {
     path:"form",
-    component:Myform
+    component:Myform,
+    title:"reactform"
   },
   {
     path:"congrolflow",
-    component:Loopingpage
+    component:Loopingpage,
+    
+  },
+  {
+    path:"templateform",
+    component:Templateformpage,
+    title:"templae"
   },
   {
     path:"**",

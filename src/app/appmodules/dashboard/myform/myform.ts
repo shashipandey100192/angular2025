@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule,FormGroup,FormControl,FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule,FormGroup,FormControl,FormBuilder ,Validator, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-myform',
@@ -86,6 +86,30 @@ xyz(x:any)
   this.y = x.data;
 }
 
+
+//----------------------------------------------------------------------------//
+
+userdata=new FormGroup({
+  first:new FormControl("user",[Validators.required]),
+  last:new FormControl("lastname",[Validators.required])
+})
+
+
+myformvalid():void
+{
+  console.log(this.userdata.controls);
+
+  // if(this.userdata.controls.first.value=="abc")
+  // {
+  //   alert("not valid");
+  // }
+  
+  if(this.userdata.value.first=="abc")
+  {
+    alert("not valid page");
+  }
+
+}
 
 
 
