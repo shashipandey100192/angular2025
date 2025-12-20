@@ -1,9 +1,10 @@
+import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule,FormGroup,FormControl,FormBuilder ,Validator, Validators} from '@angular/forms';
+import { ReactiveFormsModule,FormGroup,FormControl,FormBuilder , Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-myform',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgStyle],
   templateUrl: './myform.html',
   styleUrl: './myform.scss'
 })
@@ -90,26 +91,60 @@ xyz(x:any)
 //----------------------------------------------------------------------------//
 
 userdata=new FormGroup({
-  first:new FormControl("user",[Validators.required]),
-  last:new FormControl("lastname",[Validators.required])
+  first:new FormControl("",[Validators.required,Validators.minLength(5)]),
+  last:new FormControl("",[Validators.required,Validators.maxLength(10)])
 })
 
 
+myformstate:boolean=false;
+
 myformvalid():void
 {
-  console.log(this.userdata.controls);
+  // console.log(this.userdata.controls);
 
   // if(this.userdata.controls.first.value=="abc")
   // {
   //   alert("not valid");
   // }
   
-  if(this.userdata.value.first=="abc")
+  // if(this.userdata.value.first=="abc")
+  // {
+  //   alert("not valid page");
+  // }
+
+  if(this.userdata.valid)
   {
-    alert("not valid page");
+    console.log(this.userdata);
+
+  }
+  else
+  {
+    console.log("form not valiid");
+  }
+
+
+
+}
+
+mycolor:string="black";
+
+abcd:boolean=true;
+
+myradio(a:any)
+{
+  this.abcd = true
+  console.log(a.target.value);
+  console.log(a);
+  this.mycolor = a.target.value;
+  if(this.mycolor=='orange')
+  {
+    this.abcd=false;
   }
 
 }
+
+
+
 
 
 

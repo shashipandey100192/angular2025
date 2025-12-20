@@ -44,14 +44,52 @@
     <div class="row">
         <div class="col-md-6">
             <input type="text" class="form-control" placeholder="firstname" formControlName="first">
+            @if(userdata.get('first')?.invalid && userdata.get('first')?.touched)
+            {
+                @if(userdata.get('first')?.errors?.['required'])
+                {
+                    <p class="text-danger">first name is required</p>
+                }
+
+                @if(userdata.get('first')?.errors?.['minlength'])
+                {
+                    <p class="text-danger">first name minimum 5 char</p>
+                }
+            }
         </div>
         <div class="col-md-6">
             <input type="text" class="form-control" placeholder="lastname" formControlName="last">
+             @if(userdata.get('last')?.invalid && userdata.get('last')?.touched)
+            {
+                @if(userdata.get('last')?.errors?.['required'])
+                {
+                    <p class="text-danger">lastname is required</p>
+                }
+                 @if(userdata.get('last')?.errors?.['maxlength'])
+                {
+                    <p class="text-danger">last name maxlength 10 char</p>
+                }            
+                
+            }
+            
         </div>
         <div class="col-md-6">
             <input type="button" class="btn btn-success mt-3" value="submit" (click)="myformvalid()">
         </div>
+
+
+
         
     </div>
 </div>
 </form>
+
+
+<div class="p-5 text-white" [ngStyle]="{'background-color':mycolor}">
+    <input type="text" [disabled]="abcd" value="jjj" placeholder="user">
+    red<input type="radio" name="c" value="red" (click)="myradio($event)">
+    green<input type="radio" name="c" value="green" (click)="myradio($event)">
+    blue<input type="radio" name="c" value="blue" (click)="myradio($event)">
+    orange<input type="radio" name="c" value="orange" (click)="myradio($event)">
+    tomato<input type="radio" name="c" value="tomato" (click)="myradio($event)">
+</div>
