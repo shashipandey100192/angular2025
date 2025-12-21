@@ -6,6 +6,7 @@ import { Errorpage } from '../sharescomponents/errorpage/errorpage';
 import { Myform } from './myform/myform';
 import { Loopingpage } from './loopingpage/loopingpage';
 import { Templateformpage } from './templateformpage/templateformpage';
+import { Productlist } from './productlist/productlist';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
     path:"templateform",
     component:Templateformpage,
     title:"templae"
+  },
+  {
+    path:"api",
+    component:Productlist,
+    title:"get api"
   },
   {
     path:"**",
