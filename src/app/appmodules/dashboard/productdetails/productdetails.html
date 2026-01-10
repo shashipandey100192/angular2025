@@ -1,0 +1,21 @@
+<p>productdetails works!</p>
+<h1>{{myid}}</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img src={{products.thumbnail}} alt="sdf">
+        </div>
+        <div class="col-md-9">
+            <p class="h1"> Brand : {{products.brand}}</p>
+             <p class="h3"> Category : {{products.category}}</p>
+             <p class="h3" [ngClass]="{'text-success':products.price>=60}"> Price : {{products.price | currency:'INR'}}</p>
+             <input type="button" value="add to card" class="btn btn-success" [disabled]=pricecondition>
+              <button type="button" class="btn btn-success" (click)="mybtn($event)">send</button>
+        </div>
+
+    </div>
+
+    <input type="button" value="even binding" class="btn btn-success" (click)="mybtn($event)">
+    <p>{{a}}</p>
+</div>

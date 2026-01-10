@@ -1,22 +1,22 @@
 <p>loopingpage works!</p>
 
 <ul>
-@for(a of students;track a.age; let myodd = $odd; let b =$index; let c = $count; let f = $first ; let l=$last)
-{
-    <li>{{a.name}} ------- {{myodd}}-------{{b}}--------{{c}}--------- {{f}}  -----------{{l}}</li>
-}
+    @for(a of students;track a.age; let myodd = $odd; let b =$index; let c = $count; let f = $first ; let l=$last)
+    {
+    <li>{{a.name}} ------- {{myodd}}-------{{b}}--------{{c}}--------- {{f}} -----------{{l}}</li>
+    }
 </ul>
 <h1>particular condition</h1>
 
 <ul>
-@for(a of students;track a.age; let myodd = $odd; let i = $index)
-{
+    @for(a of students;track a.age; let myodd = $odd; let i = $index)
+    {
     @if(myodd)
     {
-        <li style="color:red">{{a.name}} {{i}}</li>
+    <li style="color:red">{{a.name}} {{i}}</li>
     }
-   
-}
+
+    }
 </ul>
 
 <h1 style="color:orange;padding:10px">use of inline css</h1>
@@ -40,6 +40,70 @@
 <input type="color" (input)="myinputcolor($event)">
 <div [ngStyle]="{backgroundColor:bg1}">this is my text</div>
 
+<img src="assets/images/img2.jpg" alt="sdjf" width="400" height="200">
+
+<button matButton>Basic</button>
+<button matButton="tonal">Basic</button>
+
+<section>
+    <div class="example-label">Floating Action Button (FAB)</div>
+    <div class="example-button-row">
+        <div class="example-flex-container">
+            <button matFab aria-label="Example icon button with a delete icon">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button matFab aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+    </div>
+</section>
 
 
 
+<mat-form-field>
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    @if (range.controls.start.hasError('matStartDateInvalid')) {
+    <mat-error>Invalid start date</mat-error>
+    }
+    @if (range.controls.end.hasError('matEndDateInvalid')) {
+    <mat-error>Invalid end date</mat-error>
+    }
+</mat-form-field>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+                @for(a of mycustomtab;track a)
+                {
+                    <mat-tab label={{a}}>sdjfhsdf</mat-tab> 
+                }
+                
+                
+
+                <!-- <mat-tab label="First">
+                    <p>Sometimes, your project might contain some library that could interfere with the bootstrap
+                        framework, or you might have a customized version of bootstrap. The consequence is that the
+                        process of determining bootstrap version might be failed, which can break the UI. In that case,
+                        we can still set the bootstrap version manually in the bootstrapping component </p>
+                </mat-tab>
+                <mat-tab label="Second">Content 2</mat-tab>
+                <mat-tab label="Third">Content 3</mat-tab>
+                <mat-tab label="Fourth">Content 3</mat-tab>
+                <mat-tab label="Fifth">Content 3</mat-tab>
+                <mat-tab label="Sixth">Content 3</mat-tab> -->
+            </mat-tab-group>
+
+        </div>
+    </div>
+</div>

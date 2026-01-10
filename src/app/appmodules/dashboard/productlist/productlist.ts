@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Generalservice } from '../../services/generalservice';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-productlist',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './productlist.html',
   styleUrl: './productlist.scss'
 })
@@ -16,7 +17,7 @@ productlistdata:any[] =[]
 getproduct()
 {
   this.http.getapi().subscribe((d:any)=>{
-    console.log(d.products)
+    // console.log(d.products)
     this.productlistdata = d.products;
   })
 }

@@ -1,12 +1,25 @@
 import { NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component,ChangeDetectionStrategy } from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {provideNativeDateAdapter} from '@angular/material/core';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
+
+
+
+
 
 @Component({
   selector: 'app-loopingpage',
-  imports: [NgStyle,FormsModule],
+  imports: [NgStyle,FormsModule,MatButtonModule,MatIconModule,MatDividerModule,MatDatepickerModule,MatFormFieldModule,ReactiveFormsModule,MatTabsModule],
   templateUrl: './loopingpage.html',
-  styleUrl: './loopingpage.scss'
+  styleUrl: './loopingpage.scss',
+  providers: [provideNativeDateAdapter()],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Loopingpage {
 
@@ -34,6 +47,16 @@ myinputcolor(mycolorelement:any)
   console.log(mycolorelement.target.value);
   this.bg1 = mycolorelement.target.value;
 }
+
+
+readonly range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
+
+
+mycustomtab:string[] = ["one","two","thee","four","five","six","seven"];
+
 
 
 

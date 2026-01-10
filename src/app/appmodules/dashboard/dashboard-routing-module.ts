@@ -7,6 +7,8 @@ import { Myform } from './myform/myform';
 import { Loopingpage } from './loopingpage/loopingpage';
 import { Templateformpage } from './templateformpage/templateformpage';
 import { Productlist } from './productlist/productlist';
+import { Productdetails } from './productdetails/productdetails';
+import { Interfacepage } from './interfacepage/interfacepage';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
     path:"api",
     component:Productlist,
     title:"get api"
+  },
+  {
+    path:"detailspage/:id",
+    component:Productdetails
+  },
+  {
+    path:"interfacetype",
+    component:Interfacepage
   },
   {
     path:"**",

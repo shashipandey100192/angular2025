@@ -17,4 +17,10 @@ getapi()
 }
 
 
+prodetails(id:any)
+{
+  return this.myhttp.get(this.apipath+"/"+id);
+}
+
+
 }
