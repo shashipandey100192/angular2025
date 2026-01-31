@@ -1,0 +1,133 @@
+1) angular form 
+	1) reactive 
+		1) formGroup
+			formControl, formGroup, formControlName		
+		2) formBuilder
+			formGroupName
+	2) template
+
+2) form value set 
+	1) setValue()
+	2) patchValue()
+3)  event binding 
+	$event
+-----------------------------------------
+4) routerLink(static)
+	1) import in ts file
+		RouterLink
+	2) use in html page
+		routerLink
+	types of path
+		1) relative 
+		2) absolute ("/" , "./" , "../")
+	2) dyn routerLink
+	   <a [routerLink]="['']">
+5) angular block  vs directives
+	*ngIf, *ngFor, *switch		// have to import / use in directive , prefix
+	@if , @for, @switch		// can't import 
+	@for()
+Note: track must have 
+Note: uniquely identifies
+	$index
+	$odd
+	$even
+	$first
+	$last
+	$count
+
+6) angular style
+	1) style	
+	2) [ngStyle]=""
+------------------------------------------------
+7) angular service (api)
+	1) ng g s servicename
+	2) app.config.ts
+		import { provideHttpClient , withFetch} from '@angular/common/http'; 
+		provideHttpClient(withFetch())
+	3) create server function (service.ts)
+	4) component.ts
+		import { Generalservice } from '../../services/generalservice';
+		constructor(private http:Generalservice){}
+	5) component.html (data binding)
+		@for()
+Note: onInit ( page load) 
+------------------------------------------------------
+8) param routing 
+	1) send id on url
+		 [routerLink]="['detailspage',card.id]"
+	2) create routing
+		 path:"detailspage/:id",
+	3) get id from url
+	4) create server function
+	5) bind on html page
+-----------------------------------------------------
+9) path (relative, absolute)
+10) Ui components
+	1) html css (custom theams)
+	2) bootstrap
+	3) ngx-bootstrap
+	4) Angular Material
+	5) 
+11) ngx-bootstrap
+	1) install 
+		ng add ngx-bootstrap
+		npm install ngx-bootstrap --save
+		npm install ngx-bootstrap --save --force 
+	2) import particular component
+	3) inject 
+12) Angular Material
+	1) ng add @angular/material
+	2) import
+13) angular interface 
+	1) ng g i interfacename			// generate interface file.ts
+------------------------------------------------------
+14) data pass
+	1) parent to child (@Input, @Output)
+	2) storage (local, session)
+	3) statement 
+
+15) storage (string)
+	1) local (you have to remove)
+		setItem()
+		getItem()
+		removeItem()
+		key()
+		clear()
+		
+	2) session(auto remove after close widnow, tab,)
+		setItem()
+		getItem()
+		removeItem()
+		key()
+		clear() 
+------------------------------------
+16) json server (work on local)
+	1) install 
+		npm install -g json-server
+	2) create "mydb.json" file in root folder ( outside of src)
+	3) start json server
+		json-server --watch mydb.json --port 8800 
+Note: default port no: 3000
+	4) crud : 
+	
+	
+
+
+
+	
+
+	
+		
+	
+
+
+
+		
+		
+
+
+
+
+	
+
+	

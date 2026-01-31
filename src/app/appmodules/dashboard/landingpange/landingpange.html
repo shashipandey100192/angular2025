@@ -1,1 +1,38 @@
 <p>landingpange works!</p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card p-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Email Id</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">phone No</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(a of mylocaluser;track a.id)
+                        {
+                        <tr>
+                            <th scope="row">{{a.id}}</th>
+                            <td>{{a.email}}</td>
+                            <td>{{a.fullname | uppercase}}</td>
+                            <td>{{a.phone}}</td>
+                            <td>{{a.pass}}</td>
+                            <td>
+                                <input type="button" value="del" (click)="deleteuser(a.id)" class="btn btn-sm btn-danger">
+
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

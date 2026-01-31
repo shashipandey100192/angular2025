@@ -9,6 +9,7 @@ import { Templateformpage } from './templateformpage/templateformpage';
 import { Productlist } from './productlist/productlist';
 import { Productdetails } from './productdetails/productdetails';
 import { Interfacepage } from './interfacepage/interfacepage';
+import { Parentpage } from './parentpage/parentpage';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path:"interfacetype",
     component:Interfacepage
+  },
+  {
+    path:"passdata",
+    component:Parentpage
   },
   {
     path:"**",

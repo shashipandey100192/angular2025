@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Generalservice } from '../../services/generalservice';
 import { RouterLink } from '@angular/router';
+import { Parentpage } from '../parentpage/parentpage';
 
 @Component({
   selector: 'app-productlist',
-  imports: [RouterLink],
+  imports: [RouterLink,Parentpage],
   templateUrl: './productlist.html',
   styleUrl: './productlist.scss'
 })
@@ -14,11 +15,18 @@ constructor(private http:Generalservice){}
 
 productlistdata:any[] =[]
 
+myidlist:any
+
 getproduct()
 {
   this.http.getapi().subscribe((d:any)=>{
     // console.log(d.products)
     this.productlistdata = d.products;
+    this.myidlist = this.productlistdata.filter((a)=>{
+        return a.category=="fragrances";
+    });
+
+
   })
 }
 
@@ -26,6 +34,9 @@ ngOnInit(): void {
   
   this.getproduct();
 }
+
+
+
 
 
 
