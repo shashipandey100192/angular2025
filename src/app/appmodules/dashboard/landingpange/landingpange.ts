@@ -29,7 +29,7 @@ mydata():void
 
 ngOnInit(): void {
   
-this.mydata();
+// this.mydata();
 this.alllocaldata();
 
 }
@@ -37,7 +37,7 @@ this.alllocaldata();
 alllocaldata()
 {
   this.server.getlocaldata().subscribe((d)=>{
-    console.log(d);
+    // console.log(d);
     this.mylocaluser = d;
   })
 }
