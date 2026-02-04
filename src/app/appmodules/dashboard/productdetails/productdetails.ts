@@ -44,6 +44,9 @@ mybtn(obj:any)
   console.log(obj.clientX);
   this.a = obj.clientX;
 }
+ngOnInit(): void {
+  
+}
 
 
 
