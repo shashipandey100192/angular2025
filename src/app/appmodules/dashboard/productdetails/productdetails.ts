@@ -19,7 +19,6 @@ pricecondition:boolean = false;
 constructor(private myrout:ActivatedRoute,private myservice:Generalservice){
 
 this.myrout.paramMap.subscribe((a)=>{
-  console.log(a.get('id'))
   this.myid = a.get('id');
 })
 }
@@ -36,11 +35,6 @@ this.myservice.prodetails(this.myid).subscribe((d)=>{
 })
 }
 
-ngOnInit(): void {
-  
-  this.productdetailspage()
-
-}
 
 
 a:any

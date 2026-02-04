@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ apipath ="https://dummyjson.com/products";
 mylocal ="http://localhost:8800/emp";
 
 
-getapi()
+getapi():Observable<any>
 {
   return this.myhttp.get(this.apipath);
 }

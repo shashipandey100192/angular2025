@@ -25,6 +25,7 @@ getproduct()
     this.myidlist = this.productlistdata.filter((a)=>{
         return a.category=="fragrances";
     });
+    console.log(this.productlistdata);
 
 
   })

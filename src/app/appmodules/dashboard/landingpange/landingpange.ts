@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Generalservice } from '../../services/generalservice';
 import { UpperCasePipe } from '@angular/common';
+import {of,map} from 'rxjs';
 
 @Component({
   selector: 'app-landingpange',
@@ -42,7 +43,6 @@ alllocaldata()
   })
 }
 
-
 deleteuser(myid:any)
 {
   this.server.deletedata(myid).subscribe((x)=>{
@@ -51,6 +51,10 @@ deleteuser(myid:any)
     this.alllocaldata();
   })
 }
+
+
+
+
 
 
 }
