@@ -6,6 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve",
     "build": "ng build",
+    "build:ssr":"ng build && ng run angular20:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr": "node dist/angular20/server/server.mjs",
