@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node dist/angular2025/server/server.mjs",
+    "start": "node dist/angular20/server/server.mjs",
     "dev": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:ssr": "ng build && ng run angular2025:server",
-    "serve:ssr": "node dist/angular2025/server/server.mjs",
+    "build:ssr": "ng build && ng run angular20:server",
+    "serve:ssr:angular20": "node dist/angular20/server/server.mjs",
     "myserver": "json-server --watch mydb.json --port 8800"
   },
   "prettier": {
