@@ -3,14 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-<<<<<<< HEAD
     "start": "node dist/angular20/server/server.mjs",
-=======
-    "start": "node dist/angular2025/server/server.mjs",
->>>>>>> e437f81 (change)
     "dev": "ng serve",
     "build": "ng build",
-    "build:ssr":"ng build && ng run angular20:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:ssr": "ng build && ng run angular2025:server",
